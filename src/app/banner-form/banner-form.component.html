@@ -1,0 +1,53 @@
+<form>
+  <section class="banner-form" fxLayout="row" fxLayoutAlign="center stretch">
+    <div fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="flex-start">
+      <ul>
+        <li><h4>Passagens Aéreas</h4></li>
+      </ul>
+      <div fxFlex="1 0 auto">
+        <div fxLayout="row" >
+          <div class="formgroup">
+            <input type="checkbox" name="ida_volta" id="ida_volta" />
+            <label for="ida_volta">Ida e volta</label>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column">
+          <div class="formgroup" fxFlex="1 1 auto">
+            <label for="origem">Origem</label>
+            <input type="text" name="origem" id="origem" />
+          </div>
+          <div class="formgroup" fxFlex="1 1 auto">
+              <label for="destino">Destino</label>
+              <input type="text" name="destino" id="destino" />
+            </div>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column">
+          <div fxLayout="row" fxFlex="1 1 50%">
+            <div class="formgroup" fxFlex="1 1 auto">
+              <label for="data_ida">Data de Ida</label>
+              <input type="text" name="data_ida" id="data_ida" />
+            </div>
+            <div class="formgroup" fxFlex="1 1 auto">
+              <label for="data_volta">Data de Volta</label>
+              <input type="text" name="data_volta" id="data_volta" />
+            </div>
+          </div>
+          <div fxLayout="row" fxFlex="1 1 50%">
+              <div class="formgroup" fxFlex="1 1 auto">
+                <label for="adultos">Adultos</label>
+                <select name="adultos" id="adultos"></select>
+              </div>
+              <div class="formgroup" fxFlex="1 1 auto">
+                <label for="criancas">Crianças</label>
+                <select name="criancas" id="criancas"></select>
+              </div>
+              <div class="formgroup" fxFlex="1 1 auto">
+                <label for="bebes">Bebês</label>
+                <select name="bebes" id="bebes"></select>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>

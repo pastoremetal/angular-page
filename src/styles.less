@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+@import "styles/colors";
+@import "styles/fonts";
+@import "styles/forms";
+
+body {
+  background-color: #white[light];
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: ProximaNova-Regular,proxima-nova,Arial;
+}
+
+.container {
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.container-full {
+  .container();
+  max-width: initial;
+}
+
+header {
+  .container();
+}
+
+section {
+  .container();
+}
+
+.gap {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.banner-form {
+  .container-full();
+  background-image: url("assets/milao-motor.jpg");
+  min-height: 35rem;
+  @media (min-width: 600px){
+    padding: 3rem 0;
+  }
+
+  > div {
+    max-width: 980px;
+    color: #fff;
+    
+    > ul {
+      list-style: none;
+      font-weight: bold;
+      margin: 0;
+      padding-left: 0;
+      
+      > li {
+        .gap();
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: #blue[dark];
+        text-align: center;
+
+        @media (min-width: 600px){
+          text-align: left;
+          background-color: #blue[light];
+          display: inline-block;
+          border-radius: 3px 3px 0 0;
+        }
+      }
+    }
+    
+    > div {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      background-color: #blue[light];
+      border-radius: 0 3px 3px;
+    }
+  }
+}
