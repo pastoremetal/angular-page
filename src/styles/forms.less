@@ -3,18 +3,31 @@
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
 
-  > label {
+  label {
     display: block;
-    padding-bottom: 0.6rem;
     font-weight: bold;
+    
+    > input[type='text'],
+    > select {
+      margin-top: 0.6rem;
+      height: 2.5rem;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #fff;
+      border: 2px solid transparent;
+      color: #000;
+      font-weight: normal;
+      border-radius: 3px;
+      padding-left: 0.3rem;
+      padding-right: 0.3rem;
+    }
   }
   input[type='checkbox'] + label {
     display: inline-block;
   }
-  > input[type='text'],
-  > select {
-    height: 2.5rem;
-    width: 100%;
-    box-sizing: border-box;
+  
+  .mat-form-field-infix {
+    padding: 0;
+    border-top: 0;
   }
 }

@@ -1,56 +1,73 @@
-<form>
-  <section class="banner-form" fxLayout="row" fxLayoutAlign="center stretch">
-    <div fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="flex-start">
-      <ul>
-        <li><h4>Passagens Aéreas</h4></li>
-      </ul>
-      <div fxFlex="1 0 auto">
-        <div fxLayout="row" >
-          <div class="formgroup">
-            <input type="checkbox" name="ida_volta" id="ida_volta" />
-            <label for="ida_volta">Ida e volta</label>
-          </div>
-        </div>
-        <div fxLayout="row" fxLayout.xs="column">
-          <div class="formgroup" fxFlex="1 1 auto">
-            <label for="origem">Origem</label>
-            <input type="text" name="origem" id="origem" />
-          </div>
-          <div class="formgroup" fxFlex="1 1 auto">
-              <label for="destino">Destino</label>
-              <input type="text" name="destino" id="destino" />
-            </div>
-        </div>
-        <div fxLayout="row" fxLayout.xs="column">
-          <div fxLayout="row" fxFlex="1 1 50%">
-            <div class="formgroup" fxFlex="1 1 auto">
-              <label for="data_ida">Data de Ida</label>
-              <input type="text" name="data_ida" id="data_ida" />
-            </div>
-            <div class="formgroup" fxFlex="1 1 auto">
-              <label for="data_volta">Data de Volta</label>
-              <input type="text" name="data_volta" id="data_volta" />
-            </div>
-          </div>
-          <div fxLayout="row" fxFlex="1 1 50%">
-            <div class="formgroup" fxFlex="1 1 auto">
-              <label for="adultos">Adultos</label>
-              <select name="adultos" id="adultos"></select>
-            </div>
-            <div class="formgroup" fxFlex="1 1 auto">
-              <label for="criancas">Crianças</label>
-              <select name="criancas" id="criancas"></select>
-            </div>
-            <div class="formgroup" fxFlex="1 1 auto">
-              <label for="bebes">Bebês</label>
-              <select name="bebes" id="bebes"></select>
-            </div>
-          </div>
-        </div>
-        <div fxLayout="row" fxLayout.xs="column" class="formgroup gapless">
-          <button type="submit" fxFlex="1 1 100%">Pesquisar</button>
+<section class="banner-form" fxLayout="row" fxLayoutAlign="center stretch">
+  <div fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="flex-start">
+    <ul>
+      <li><h4>Passagens Aéreas</h4></li>
+    </ul>
+    <div fxFlex="1 0 auto">
+      <div fxLayout="row" >
+        <div class="formgroup">
+          <input type="checkbox" [formControl]="ida_volta" />
+          <label for="ida_volta">Ida e volta</label>
         </div>
       </div>
+      <div fxLayout="row" fxLayout.xs="column">
+        <mat-form-field fxFlex="1 1 auto" class="formgroup">
+          <label>
+            Origem
+            <input matInput type="text" [formControl]="origem" [matAutocomplete]="auto" />
+          </label>
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOrigemOptions | async" [value]="option">
+              {{ option }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <div class="formgroup" fxFlex="1 1 auto">
+            <label for="destino">
+              Destino
+              <input type="text" [formControl]="destino" />
+            </label>
+          </div>
+      </div>
+      <div fxLayout="row" fxLayout.xs="column">
+        <div fxLayout="row" fxFlex="1 1 50%">
+          <div class="formgroup" fxFlex="1 1 auto">
+            <label for="data_ida">
+              Data de Ida
+              <input type="text" [formControl]="data_ida" />
+            </label>
+          </div>
+          <div class="formgroup" fxFlex="1 1 auto">
+            <label for="data_volta">
+              Data de Volta
+              <input type="text" [formControl]="data_volta" />
+            </label>
+          </div>
+        </div>
+        <div fxLayout="row" fxFlex="1 1 50%">
+          <div class="formgroup" fxFlex="1 1 auto">
+            <label for="adultos">
+              Adultos
+              <select [formControl]="adultos"></select>
+            </label>
+          </div>
+          <div class="formgroup" fxFlex="1 1 auto">
+            <label for="criancas">
+              Crianças
+              <select [formControl]="criancas"></select>
+            </label>
+          </div>
+          <div class="formgroup" fxFlex="1 1 auto">
+            <label for="bebes">
+              Bebês
+              <select [formControl]="bebes"></select>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayout.xs="column" class="formgroup gapless">
+        <button type="submit" fxFlex="1 1 100%">Pesquisar</button>
+      </div>
     </div>
-  </section>
-</form>
+  </div>
+</section>
